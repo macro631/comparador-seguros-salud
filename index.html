@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Seguros de salud Ismary</title>
+<title>Seguros de salud Ismary · v2</title>
 <style>
 :root{
   --bg:#f5f6f8;--card:#ffffff;--text:#1c2230;--muted:#5d6676;--line:#dde2ea;
@@ -24,35 +24,64 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 28px}
 [hidden]{display:none!important}
 
-header.top{padding-top:24px}
+header.top{padding-top:32px}
 header.top h1{margin:0;font-size:1.7rem}
 header.top p{margin:4px 0 0;color:var(--muted)}
 
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px auto}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:24px auto 28px}
 .tabs button{border:1px solid var(--line);background:var(--card);color:var(--text);padding:9px 16px;border-radius:999px;font:inherit;font-size:.92rem;font-weight:600;cursor:pointer}
 .tabs button[aria-selected="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
 .tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;min-width:0}
 .hint{display:block;font-weight:400;color:var(--muted);font-size:.84rem}
 input[type=number],input[type=search],select{padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}
 input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
 
 /* ---------- ¿Cuál me conviene? ---------- */
-.principal{display:grid;grid-template-columns:minmax(300px,400px) 1fr;gap:20px;align-items:start}
-@media (max-width:880px){.principal{grid-template-columns:1fr}.principal .respuesta{order:-1}}
-.preguntas h2,.respuesta h2{font-size:1rem;margin:0 0 4px;color:var(--muted);font-weight:600}
+.principal{display:grid;grid-template-columns:minmax(420px,480px) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:1100px){.principal{grid-template-columns:1fr}.preguntas{max-width:none}}
+.preguntas h2{font-size:1.35rem;line-height:1.25;margin:0;color:var(--text)}
+.preguntas-intro{margin:6px 0 20px;color:var(--muted);font-size:.9rem}
+.respuesta h2{font-size:1rem;margin:0 0 4px;color:var(--muted);font-weight:600}
 .bloque{padding:14px 0;border-bottom:1px solid var(--line)}
 .bloque:last-child{border-bottom:0;padding-bottom:0}
 .bloque h3{margin:0 0 8px;font-size:1.05rem}
 .frase{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
 .frase input[type=number]{width:120px}
 .peso{display:inline-flex;align-items:center;gap:4px}
+.preguntas .bloque{padding:24px 0;border-bottom:1px solid var(--line)}
+.preguntas .bloque:first-of-type{padding-top:0}
+.preguntas .bloque-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:18px;border-left:3px solid var(--accent);padding-left:12px}
+.preguntas .bloque-num{display:none}
+.preguntas .bloque-head h3{margin:0;font-size:1.12rem;line-height:1.3}
+.preguntas .bloque-head .hint{margin-top:3px}
+.campos-simulacion{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 14px;align-items:start}
+.campo-simulacion{display:flex;flex-direction:column;gap:7px;min-width:0}
+.campo-simulacion>label,.campo-simulacion>.campo-etiqueta{font-size:.84rem;font-weight:650;color:var(--text)}
+.campo-simulacion .peso{width:100%;padding:0 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.campo-simulacion .peso:focus-within{outline:2px solid var(--accent);outline-offset:1px}
+.campo-simulacion .peso input[type=number]{width:100%;min-width:0;border:0;padding:9px 2px;background:transparent;outline:0}
+.campo-simulacion .stepper{width:100%;justify-content:space-between}
+.campo-simulacion .stepper input[type=number]{min-width:0;width:100%;text-align:center}
+.campo-simulacion select{width:100%;min-width:0}
+.opciones-atencion{display:grid;gap:12px;margin-top:18px;padding:14px;border-radius:8px;background:var(--bg)}
+.opciones-atencion label{display:flex;align-items:flex-start;gap:8px;font-size:.85rem;line-height:1.35;cursor:pointer}
+.opciones-atencion input[type=checkbox]{flex:none;margin:2px 0 0;width:17px;height:17px}
+.preguntas .seg.tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;border-radius:9px}
+.preguntas .seg.tres label{display:grid;place-items:center;min-height:42px;padding:6px 4px;text-align:center;font-size:.82rem;line-height:1.15}
+.preguntas .nota-campo{margin-top:10px}
+.ayuda-gasto{margin-top:12px;font-size:.83rem;color:var(--muted)}
+.ayuda-gasto summary{cursor:pointer;color:var(--accent);font-weight:600}
+.ayuda-gasto ul{margin:8px 0 0;padding-left:18px}
+.ayuda-gasto li+li{margin-top:5px}
+.preguntas .ajustes-titulo{margin:20px 0 4px;font-size:.95rem;font-weight:700}
+@media (max-width:360px){.campos-simulacion{grid-template-columns:1fr}}
 .stepper{display:inline-flex;align-items:center;gap:6px}
-.stepper button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--text);font-size:1.2rem;line-height:1;cursor:pointer}
+.stepper button{flex:none;width:40px;height:44px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:1.2rem;line-height:1;cursor:pointer}
 .stepper button:hover{border-color:var(--accent)}
 .stepper input[type=number]{width:52px;text-align:center}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;position:relative}
@@ -61,14 +90,26 @@ input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
 .seg input:checked+label{background:var(--accent);color:var(--on-accent)}
 .seg input:focus-visible+label{outline:2px solid var(--accent);outline-offset:-2px}
 
-.titular{font-size:1.6rem;line-height:1.25;margin:4px 0 6px;font-weight:700}
+.titular{font-size:clamp(1.6rem,2.4vw,2.1rem);line-height:1.2;letter-spacing:-.025em;margin:10px 0 12px;font-weight:750;text-wrap:balance}
 .titular.bien{color:var(--good)}
-.bajada{margin:0 0 16px;color:var(--text)}
+.bajada{margin:0 0 24px;color:var(--muted);max-width:65ch}
 .idea{background:var(--accent-soft);border-radius:10px;padding:10px 14px;margin:14px 0 0;font-size:.95rem}
 
-.grafico{margin-top:8px}
+.grafico{margin-top:28px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.comparacion-anual{margin:24px 0 12px;overflow-x:auto;border:1px solid var(--line);border-radius:10px;scrollbar-color:var(--ref) var(--bg)}
+.cuenta-anual{width:100%;border-collapse:separate;border-spacing:0;font-size:.85rem}
+.cuenta-anual caption{text-align:left;font-size:1rem;font-weight:700;padding:16px;background:var(--bg)}
+.cuenta-anual th,.cuenta-anual td{padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:right;min-width:125px;font-variant-numeric:tabular-nums}
+.cuenta-anual th:first-child{text-align:left;min-width:180px;position:sticky;left:0;z-index:1}
+.cuenta-anual tbody th{background:var(--card)}
+.cuenta-anual thead th{font-size:.8rem;color:var(--text);font-weight:650;background:var(--bg)}
+.cuenta-anual small{display:block;margin-top:3px;font-size:.75rem;font-weight:400;color:var(--muted);line-height:1.35}
+.cuenta-anual .subtotal th,.cuenta-anual .subtotal td{border-top:2px solid var(--line);font-weight:600}
+.cuenta-anual .total-anual th,.cuenta-anual .total-anual td{background:var(--accent-soft);font-size:.95rem;font-weight:750;border-bottom:0}
+.cuenta-anual .ahorro{color:var(--good)}
+.cuenta-anual .extra{color:var(--bad)}
 .grafico .eje{font-size:.82rem;color:var(--muted);margin:0 0 8px}
-.barra{display:grid;grid-template-columns:150px 1fr auto;gap:10px;align-items:center;padding:5px 0;border-radius:6px;cursor:default}
+.barra{display:grid;grid-template-columns:150px 1fr auto;gap:14px;align-items:center;padding:9px 0;border-radius:6px;cursor:default}
 .barra:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .barra .nombre{font-size:.9rem}
 .barra .pista{height:16px;position:relative}
@@ -85,7 +126,7 @@ input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
 .opcion header{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
 .opcion h3{margin:0;font-size:1.02rem}
 .opcion .total{font-weight:700;font-variant-numeric:tabular-nums}
-.opcion ul{margin:8px 0 0;padding-left:18px;font-size:.92rem}
+.opcion ul{margin:14px 0 0;padding-left:18px;font-size:.9rem;line-height:1.65}
 .opcion li{margin-bottom:3px}
 .opcion details{margin-top:6px;font-size:.85rem}
 .opcion summary{cursor:pointer;color:var(--accent);font-weight:600}
@@ -97,25 +138,30 @@ input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
 .nota{background:var(--warn-soft);color:var(--warn);border-radius:8px;padding:6px 10px;font-size:.84rem;margin:6px 0 0}
 .ojo{font-size:.88rem;background:var(--warn-soft);border-radius:10px;padding:10px 14px;margin-top:16px}
 
-.otra{border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin-top:10px}
-.otra-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.otra{border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px;background:var(--card)}
+.otra-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .otra-head strong{font-size:.95rem}
-.otra .frase{margin:6px 0}
-.otra .frase input[type=number]{width:100px}
+.otra .campos-simulacion{margin-top:10px}
 .otra .stepper input[type=number]{width:52px}
-.quitar{border:0;background:none;color:var(--muted);font:inherit;font-size:.82rem;cursor:pointer;text-decoration:underline}
+.quitar{flex:none;min-height:36px;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:none;color:var(--muted);font:inherit;font-size:.8rem;cursor:pointer}
 .quitar:hover{color:var(--bad)}
 #nuevaAtencion{width:100%;margin-top:10px}
 .seg.tres label{padding:6px 12px}
-details.precios{margin-top:16px}
+details.precios{margin-top:10px;border:1px solid var(--line);border-radius:10px;padding:11px 12px}
 details.precios summary{cursor:pointer;font-weight:600}
+.preguntas details.precios[open]>summary{margin-bottom:12px}
+.preguntas details.precios .campo{display:block;margin:10px 0 5px;font-size:.84rem;font-weight:650}
+.preguntas details.precios select{width:100%}
+.preguntas details.precios>.frase{font-size:.85rem}
 .precio-fila{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
 .precio-fila:last-child{border-bottom:0}
-.precio-fila label{display:flex;align-items:center;gap:8px;font-weight:600}
+.precio-fila label{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.88rem}
 .precio-fila input[type=number]{width:120px}
 
 /* ---------- Análisis ---------- */
 .stack{display:grid;gap:16px}
+.perfil{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:12px 0 0}
+.perfil li{background:var(--accent-soft);border-radius:999px;padding:4px 12px;font-size:.85rem}
 .titulo-sec{font-size:1.15rem;margin:0 0 6px}
 .tabla-wrap{overflow-x:auto;margin-top:8px}
 table.matriz{border-collapse:collapse;width:100%;min-width:860px;font-size:.88rem}
@@ -124,15 +170,20 @@ table.matriz{border-collapse:collapse;width:100%;min-width:860px;font-size:.88re
 .matriz tbody th{font-weight:600;width:190px;position:sticky;left:0;background:var(--card);z-index:1}
 .matriz .sub{display:block;margin-top:4px;color:var(--muted);font-size:.8rem;font-weight:400}
 .matriz td p{margin:6px 0 0}
+.matriz tr.totales th,.matriz tr.totales td{font-size:1rem;border-bottom:0}
 .nivel{display:inline-flex;gap:6px;align-items:center;font-weight:700;font-size:.76rem;padding:2px 8px;border-radius:999px;white-space:nowrap}
 .nivel.n3{background:var(--good-soft);color:var(--good)}
 .nivel.n2{background:var(--accent-soft);color:var(--accent)}
 .nivel.n1{background:var(--warn-soft);color:var(--warn)}
 .nivel.n0{background:var(--bad-soft);color:var(--bad)}
+.marcador{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0 16px}
+.marcador div{border:1px solid var(--line);border-radius:12px;padding:12px}
+.marcador div.top{border:2px solid var(--good)}
+.marcador h3{margin:0;font-size:.95rem}
+.marcador .pts{font-size:1.6rem;font-weight:800;margin:4px 0 0}
+.marcador p{margin:2px 0 0;font-size:.85rem;color:var(--muted)}
+.conclusion-txt p{margin:0 0 10px}
 .reco{background:var(--good-soft);border-radius:10px;padding:12px 14px}
-.checklist{padding-left:20px;margin:6px 0 0}
-.checklist li{margin-bottom:8px}
-
 .comparacion-resumen{background:var(--accent-soft);border-radius:10px;padding:12px 14px;margin:12px 0}
 .comparacion-resumen strong{display:block}
 .comparacion-resultados{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0}
@@ -144,6 +195,8 @@ table.matriz{border-collapse:collapse;width:100%;min-width:860px;font-size:.88re
 .comparacion-resultado .positivo{color:var(--good)}
 .comparacion-resultado .negativo{color:var(--warn)}
 .enlace-accion{border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:8px;padding:8px 12px;font:inherit;font-weight:600;cursor:pointer}
+.checklist{padding-left:20px;margin:6px 0 0}
+.checklist li{margin-bottom:8px}
 
 /* ---------- Una atención ---------- */
 .layout{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:20px;align-items:start}
@@ -172,6 +225,7 @@ details.adv summary{cursor:pointer;font-weight:600;font-size:.9rem}
 .opcion.ej-gana{border:2px solid var(--warn)}
 .barra.ej-gana .nombre{font-weight:700;color:var(--warn)}
 .ej-nota{color:var(--warn);font-weight:600}
+.marcador div.top-ej{border:2px solid var(--warn)}
 .desempate{margin:4px 0 0;font-size:.82rem;color:var(--good)}
 .montos{display:flex;gap:20px;align-items:flex-end;margin-top:6px}
 .montos div{display:flex;flex-direction:column}
@@ -189,7 +243,6 @@ details.adv summary{cursor:pointer;font-weight:600;font-size:.9rem}
 .tope-fila span:last-child{text-align:right;font-variant-numeric:tabular-nums}
 .tag{font-size:.75rem;color:var(--warn);border-bottom:1px dotted var(--warn);cursor:help}
 .tag.con-tip{display:inline-block}
-.tag.exento{color:var(--good);border-bottom-color:var(--good)}
 .tag .tip-box{right:auto;width:240px;font-size:.8rem;font-weight:400}
 .linea .alc{font-size:.8rem}
 .alerta-tope.fuerte{color:var(--warn);font-weight:600}
@@ -215,11 +268,62 @@ details.adv summary{cursor:pointer;font-weight:600;font-size:.9rem}
 
 footer.aviso{color:var(--muted);font-size:.8rem;padding-top:28px;padding-bottom:32px}
 footer.aviso ul{padding-left:18px}
+
+/* Formulario anual: frecuencia, importe y condiciones con jerarquía estable. */
+input[type=checkbox]{accent-color:var(--accent)}
+button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+input[type=number],input[type=search],select{min-height:44px;font-variant-numeric:tabular-nums}
+.preguntas-intro{max-width:60ch;line-height:1.6;margin-bottom:28px}
+.frecuencia-campo{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px 14px}
+.frecuencia-campo>label{grid-column:1/-1}
+.otra .campo-simulacion .stepper input[type=number]{width:100%}
+.otra .campos-simulacion>.campo-simulacion:last-child:nth-child(3){grid-column:1/-1;max-width:calc(50% - 7px)}
+#agregarMedicamento,#nuevaAtencion{width:100%;min-height:46px;background:var(--accent-soft);color:var(--accent);border:1px dashed var(--accent);text-align:left}
+#agregarMedicamento:hover{background:var(--card)}
+.preguntas .ajustes-titulo{margin-top:28px;padding-top:8px;font-size:1.05rem}
+.preguntas details.precios{padding:16px;background:var(--bg);margin-top:12px}
+.preguntas details.precios summary{font-size:.9rem;line-height:1.5}
+.preguntas>.hint{line-height:1.65;margin:16px 0}
+.respuesta>h2{color:var(--text);font-size:1.05rem}
+.cuenta-anual tbody tr:hover td,.cuenta-anual tbody tr:hover th{background:var(--bg)}
+.cuenta-anual .total-anual:hover td,.cuenta-anual .total-anual:hover th{background:var(--accent-soft)}
+.cuenta-anual .total-anual th,.cuenta-anual .total-anual td{padding-top:18px;padding-bottom:18px;white-space:nowrap}
+.opcion{padding:20px}
+.opcion header{align-items:flex-start;flex-direction:column;gap:6px}
+.opcion .total{font-size:1.18rem}
+.opcion.mejor{border-width:1px;border-left-width:4px}
+.opcion details{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+.idea,.ojo{padding:16px;line-height:1.6}
+@media (min-width:720px) and (max-width:1100px){
+  .preguntas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
+  .preguntas>h2,.preguntas>.preguntas-intro,.preguntas>.ajustes-titulo,.preguntas>.hint,.preguntas>details{grid-column:1/-1}
+  .preguntas .bloque:first-of-type{padding-top:24px}
+  .preguntas .bloque:nth-of-type(5){grid-column:1/-1}
+}
+@media (max-width:600px){
+  .wrap{padding-left:14px;padding-right:14px}
+  header.top{padding-top:24px}
+  .card{padding:18px;border-radius:12px}
+  .tabs{gap:6px;margin-top:20px;margin-bottom:20px}
+  .tabs button{padding:10px 12px;font-size:.84rem}
+  .principal{gap:20px}
+  .otra{padding:12px}
+  .barra{grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;padding:10px 0}
+  .barra .nombre{grid-column:1;grid-row:1}
+  .barra .valor{grid-column:2;grid-row:1}
+  .barra .pista{grid-column:1/-1;grid-row:2;height:10px}
+  .cuenta-anual th:first-child{min-width:140px;max-width:170px}
+  .precio-fila{align-items:flex-start}
+}
+@media (max-width:360px){
+  .frecuencia-campo{grid-template-columns:1fr}
+  .otra .campos-simulacion>.campo-simulacion:last-child:nth-child(3){max-width:none}
+}
 </style>
 </head>
 <body>
 <header class="top wrap">
-  <h1>Hola, Ismary</h1>
+  <h1>Hola, Ismary <span class="badge ej">v2</span></h1>
   <p>Comparamos 4 seguros complementarios para tu caso: 32 años, La Serena, Fonasa tramo B, C o D.</p>
 </header>
 
@@ -257,7 +361,7 @@ footer.aviso ul{padding-left:18px}
     <ol class="checklist">
       <li><strong>Declaración de salud: responde con la verdad.</strong> Si ya consultaste por dolor pélvico, menstruaciones muy dolorosas o sospecha de endometriosis, o por lumbago, informa lo que te consulten. La aseguradora debe precisar las limitaciones o exclusiones que aplicará. Antes de decidir, pide esa respuesta por escrito y simula sin reembolso los gastos que queden excluidos.</li>
       <li><strong>Fertilidad:</strong> los tratamientos de fertilidad e infertilidad están excluidos en BCI y Bupa. En BICE hay que revisarlo en el Art. 7 de sus condiciones generales (POL320220100), que no detallan sus condiciones particulares. El control ginecológico y el estudio de una enfermedad como la endometriosis sí se cubren, si no es preexistente.</li>
-      <li><strong>Pregunta si tus profesionales en La Serena dan bono Fonasa.</strong> Sin bono, BCI calcula el 80% sobre el 10% del precio (≈ 8% efectivo en prestaciones generales); Bupa deja sin cobertura la mayoría de las prestaciones, con excepciones como consultas médicas. BICE sigue pagando, pero menos: en la mayoría de las atenciones calcula sobre la mitad del precio.</li>
+      <li><strong>Pregunta si tus profesionales en La Serena dan bono Fonasa.</strong> Sin bono, BCI calcula el 80% sobre el 10% del precio (≈ 8% efectivo en prestaciones generales); Bupa deja sin cobertura la mayoría de las prestaciones, con excepciones como consultas médicas. BICE sigue pagando, pero menos.</li>
       <li><strong>Tratamiento hormonal:</strong> pregunta a BCI y BICE si reembolsan anticonceptivos indicados como tratamiento (por ejemplo, para endometriosis). BCI los evalúa caso a caso; Bupa los excluye.</li>
       <li><strong>Si eliges Bupa,</strong> pide su red preferente en La Serena: ahí no se cobra deducible.</li>
       <li><strong>Renovación:</strong> ninguna garantiza la renovación y todas pueden subir el precio cada año.</li>
@@ -270,53 +374,81 @@ footer.aviso ul{padding-left:18px}
   <div class="principal">
     <form class="card preguntas" id="plan" onsubmit="return false">
       <h2>Cuéntanos de tus atenciones</h2>
+      <p class="preguntas-intro">Ajusta las frecuencias, los precios y lo que cubre Fonasa. Los datos iniciales son ejemplos.</p>
 
       <div class="bloque">
-        <h3>Psicóloga</h3>
-        <div class="frase">Voy
-          <span class="stepper"><button type="button" class="step" data-target="psiN" data-delta="-1" aria-label="Una vez menos">−</button><input type="number" id="psiN" min="0" max="8" value="2" aria-label="Veces al mes a la psicóloga"><button type="button" class="step" data-target="psiN" data-delta="1" aria-label="Una vez más">+</button></span>
-          veces al mes</div>
-        <div class="frase">Cada sesión cuesta <span class="peso">$<input type="number" id="psiPrecio" min="0" step="1000" value="35000" aria-label="Precio de la sesión de psicología"></span></div>
-        <div class="frase">¿Usas bono Fonasa?
-          <span class="seg"><input type="radio" name="psiBono" id="psiBonoSi" value="si" checked><label for="psiBonoSi">Sí</label><input type="radio" name="psiBono" id="psiBonoNo" value="no"><label for="psiBonoNo">No</label></span></div>
-        <div class="frase" id="psiCopagoFila">Con el bono pago <span class="peso">$<input type="number" id="psiCopago" min="0" step="1000" value="21000" aria-label="Lo que pagas con bono en psicología"></span></div>
-        <label class="frase"><input type="checkbox" id="psiSinReembolso"> No contar reembolso de psicología (si la póliza lo excluye)</label>
+        <div class="bloque-head"><span class="bloque-num" aria-hidden="true">01</span><div><h3>Psicóloga</h3><span class="hint">Sesiones habituales</span></div></div>
+        <div class="campos-simulacion">
+          <div class="campo-simulacion frecuencia-campo"><label for="psiN">Sesiones previstas</label><span class="stepper"><button type="button" class="step" data-target="psiN" data-delta="-1" aria-label="Una sesión menos">−</button><input type="number" id="psiN" min="0" max="31" step="0.01" value="2"><button type="button" class="step" data-target="psiN" data-delta="1" aria-label="Una sesión más">+</button></span><select id="psiPeriodo" aria-label="Periodo de las sesiones de psicología"><option value="mes">Al mes</option><option value="anio">Al año</option></select></div>
+          <div class="campo-simulacion"><label for="psiPrecio">Precio por sesión</label><span class="peso">$<input type="number" id="psiPrecio" min="0" step="1000" value="35000"></span></div>
+          <div class="campo-simulacion"><label for="psiBonifPct">Fonasa cubre</label><span class="peso"><input type="number" id="psiBonifPct" min="0" max="100" step="1" value="50">%</span></div>
+        </div>
+        <div class="opciones-atencion">
+          <label><input type="checkbox" id="psiOrden" checked> Tengo orden de derivación médica</label>
+          <label><input type="checkbox" id="psiSinReembolso"> No contar reembolso si la póliza excluye psicología</label>
+        </div>
       </div>
 
       <div class="bloque">
-        <h3>Nutricionista hormonal</h3>
-        <div class="frase">Voy
-          <span class="stepper"><button type="button" class="step" data-target="nutN" data-delta="-1" aria-label="Una vez menos">−</button><input type="number" id="nutN" min="0" max="8" value="1" aria-label="Veces al mes a la nutricionista"><button type="button" class="step" data-target="nutN" data-delta="1" aria-label="Una vez más">+</button></span>
-          veces al mes</div>
-        <div class="frase">Cada sesión cuesta <span class="peso">$<input type="number" id="nutPrecio" min="0" step="1000" value="40000" aria-label="Precio de la sesión de nutricionista"></span></div>
-        <div class="frase">¿Usas bono Fonasa?
-          <span class="seg"><input type="radio" name="nutBono" id="nutBonoSi" value="si"><label for="nutBonoSi">Sí</label><input type="radio" name="nutBono" id="nutBonoNo" value="no" checked><label for="nutBonoNo">No</label></span></div>
-        <div class="frase" id="nutCopagoFila" hidden>Con el bono pago <span class="peso">$<input type="number" id="nutCopago" min="0" step="1000" value="24000" aria-label="Lo que pagas con bono en nutricionista"></span></div>
-        <label class="frase"><input type="checkbox" id="nutSinReembolso"> No contar reembolso de nutrición (si la póliza lo excluye)</label>
+        <div class="bloque-head"><span class="bloque-num" aria-hidden="true">02</span><div><h3>Nutricionista hormonal</h3><span class="hint">Sesiones habituales</span></div></div>
+        <div class="campos-simulacion">
+          <div class="campo-simulacion frecuencia-campo"><label for="nutN">Sesiones previstas</label><span class="stepper"><button type="button" class="step" data-target="nutN" data-delta="-1" aria-label="Una sesión menos">−</button><input type="number" id="nutN" min="0" max="31" step="0.01" value="1"><button type="button" class="step" data-target="nutN" data-delta="1" aria-label="Una sesión más">+</button></span><select id="nutPeriodo" aria-label="Periodo de las sesiones de nutrición"><option value="mes">Al mes</option><option value="anio">Al año</option></select></div>
+          <div class="campo-simulacion"><label for="nutPrecio">Precio por sesión</label><span class="peso">$<input type="number" id="nutPrecio" min="0" step="1000" value="40000"></span></div>
+          <div class="campo-simulacion"><label for="nutBonifPct">Fonasa cubre</label><span class="peso"><input type="number" id="nutBonifPct" min="0" max="100" step="1" value="0">%</span></div>
+        </div>
+        <div class="opciones-atencion">
+          <label><input type="checkbox" id="nutOrden" checked> Tengo orden de derivación médica</label>
+          <label><input type="checkbox" id="nutSinReembolso"> No contar reembolso si la póliza excluye nutrición</label>
+        </div>
       </div>
 
       <div class="bloque">
-        <h3>Otras atenciones del año</h3>
-        <span class="hint">Son valores de ejemplo: cámbialos por los tuyos. En "pagas" va lo que pagas después del bono Fonasa; si no hay bono, es el mismo precio.</span>
+        <div class="bloque-head"><span class="bloque-num" aria-hidden="true">03</span><div><h3>Otras atenciones del año</h3><span class="hint">Consultas, exámenes y otros gastos. Pon 0 % si Fonasa no cubre.</span></div></div>
         <div id="otras"></div>
         <select id="nuevaAtencion" aria-label="Agregar otra atención"></select>
       </div>
 
       <div class="bloque">
-        <h3>Remedios</h3>
-        <div class="frase">Gasto al mes en farmacia <span class="peso">$<input type="number" id="medGasto" min="0" step="1000" value="25000" aria-label="Gasto mensual en remedios"></span></div>
-        <div class="frase">Son mayormente
-          <span class="seg tres"><input type="radio" name="medTipo" id="medGen" value="med_generico" checked><label for="medGen">Genéricos</label><input type="radio" name="medTipo" id="medBio" value="med_bio"><label for="medBio">Bioequivalentes</label><input type="radio" name="medTipo" id="medMarca" value="med_marca"><label for="medMarca">De marca</label></span></div>
-        <label class="frase"><input type="checkbox" id="medSinReembolso"> No contar reembolso de remedios (si la póliza los excluye)</label>
-        <span class="hint">Fonasa no bonifica los remedios de farmacia.</span>
+        <div class="bloque-head"><span class="bloque-num" aria-hidden="true">04</span><div><h3>Remedios</h3><span class="hint">Mezcla tipos, precios y compras ocasionales. Fonasa no los bonifica.</span></div></div>
+        <div id="medicamentos"></div>
+        <button type="button" class="enlace-accion" id="agregarMedicamento" style="margin-top:12px">+ Agregar gasto de farmacia</button>
+        <p class="hint">Cada fila tiene su propio tipo, precio y número de compras al año. Puedes repetir un tipo en otra fila si el importe o el mes cambia. Pon 0 compras o quita la fila si no tendrás ese gasto.</p>
+        <details class="ayuda-gasto"><summary>Cómo se consideran los remedios</summary><ul>
+          <li>BCI exige receta para reembolsarlos.</li>
+          <li>Los topes de medicamentos se comparten entre todas las filas de acuerdo con cada póliza.</li>
+          <li>El descuento Bupa tiene límite mensual. Indica el mes de las compras cuando corresponda; “Repartidas en el año” supone una distribución uniforme.</li>
+          <li>El descuento Bupa se estima solo para genéricos y de marca; su anexo no precisa una tasa para bioequivalentes. Excluye, entre otros, anticonceptivos y medicamentos de reproducción.</li>
+        </ul></details>
       </div>
 
       <div class="bloque">
-        <h3>Orden médica</h3>
-        <div class="frase">¿Un médico te derivó a estas atenciones?
-          <span class="seg"><input type="radio" name="deriv" id="derivSi" value="si" checked><label for="derivSi">Sí</label><input type="radio" name="deriv" id="derivNo" value="no"><label for="derivNo">No</label></span></div>
-        <span class="hint">Bupa exige orden para psicología, nutrición y kinesiología, entre otras prestaciones señaladas en la póliza.</span>
+        <div class="bloque-head"><span class="bloque-num" aria-hidden="true">05</span><div><h3>GES/CAEC</h3><span class="hint">Complétalo solo si pagaste un deducible GES/CAEC</span></div></div>
+        <div class="campos-simulacion">
+          <div class="campo-simulacion"><label for="gesAnioMonto">Deducible pagado</label><span class="peso">$<input type="number" id="gesAnioMonto" min="0" step="1000" value="0"></span></div>
+          <div class="campo-simulacion"><label for="gesAnioMes">Mes del pago</label><select id="gesAnioMes"><option value="1">Enero</option><option value="2">Febrero</option><option value="3">Marzo</option><option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option><option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option><option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option></select></div>
+        </div>
+        <div class="opciones-atencion"><label><input type="checkbox" id="gesAnioRed" checked> Usé la red de prestadores de Fonasa para GES/CAEC</label></div>
+        <span class="hint nota-campo">BCI y Bupa tienen una cobertura especial del deducible GES/CAEC; BICE Premium y Elite no la incluyen como beneficio independiente.</span>
       </div>
+
+      <p class="ajustes-titulo">Ajustes de la comparación</p>
+      <details class="precios">
+        <summary>Condiciones de las atenciones</summary>
+        <label class="campo" for="anioPrestador">¿Dónde te atiendes?</label>
+        <select id="anioPrestador">
+          <option value="general">En La Serena u otro lugar</option>
+          <option value="premium">Clínica Alemana, Las Condes, San Carlos o Los Andes (Santiago)</option>
+          <option value="bupa">Clínica Bupa Santiago o Reñaca</option>
+          <option value="bupa_antofagasta">Clínica Bupa Antofagasta</option>
+          <option value="integramedica">IntegraMédica</option>
+        </select>
+        <label class="campo" for="anioCargas">Personas en el seguro además de ti</label>
+        <select id="anioCargas"><option value="0">Ninguna</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select>
+        <label class="frase"><input type="checkbox" id="anioRed"> Todas estas atenciones fueron en la red preferente Bupa</label>
+        <span class="hint">Estas condiciones se aplican a todas las atenciones del año. Si mezclas prestadores o redes, simula cada escenario por separado.</span>
+      </details>
+
+      <p class="hint">La simulación parte al inicio de la vigencia, con deducible y topes sin usar. Reparte las atenciones durante 12 meses, salvo las compras y GES/CAEC con un mes indicado. Aplica a cada una las mismas reglas de “¿Cuánto me devuelven por una atención?”. Para comparar la primera atención con esa sección, desmarca allí “Deducible cubierto”.</p>
 
       <details class="precios">
         <summary>Primas mensuales de los seguros (confirma tu cotización)</summary>
@@ -324,8 +456,10 @@ footer.aviso ul{padding-left:18px}
         <div class="precio-fila"><label><input type="checkbox" id="act_bice" checked>BICE VIDA Premium</label><span class="peso">$<input type="number" id="prima_bice" min="0" step="1" aria-label="Precio mensual BICE Premium"></span></div>
         <div class="precio-fila"><label><input type="checkbox" id="act_elite" checked>BICE VIDA Elite <span class="badge ej">Ejercicio</span></label><span class="peso">$<input type="number" id="prima_elite" min="0" step="1" aria-label="Precio mensual BICE Elite"></span></div>
         <div class="precio-fila"><label><input type="checkbox" id="act_bupa" checked>Bupa Cuidado Total 70</label><span class="peso">$<input type="number" id="prima_bupa" min="0" step="1" value="43205" aria-label="Precio mensual Bupa"></span></div>
-        <div class="precio-fila"><label for="valorUF">Valor UF</label><span class="peso">$<input type="number" id="valorUF" min="1" step="0.01" value="41226.39"></span></div>
-        <span class="hint">Actualiza el valor UF si consultas el simulador otro día. Desmarca un seguro para sacarlo de la comparación.</span>
+        <div class="precio-fila"><label for="valorUF">Valor UF</label><span class="peso">$<input type="number" id="valorUF" min="1" step="0.01" value="41231.70"></span></div>
+        <span class="hint">UF precargada para el 28 de octubre de 2026. Actualízala si consultas el simulador otro día. Desmarca un seguro para sacarlo de la comparación.</span>
+        <p class="hint">Las primas BICE se actualizan con la UF y las cargas según los PDF. Si escribes una cotización en esos campos, se usa tu precio. BCI y Bupa requieren confirmar la cotización para las cargas elegidas. Los gastos ingresados corresponden a una persona.</p>
+        <button type="button" class="enlace-accion" id="restaurarPrimasBice">Usar tarifas BICE de las pólizas</button>
       </details>
     </form>
 
@@ -333,6 +467,9 @@ footer.aviso ul{padding-left:18px}
       <h2>Nuestra respuesta</h2>
       <p class="titular" id="titular"></p>
       <p class="bajada" id="bajada"></p>
+
+      <div class="comparacion-anual" id="comparacionAnual"></div>
+      <p class="hint">“Sin seguro” conserva la cobertura Fonasa que ingresaste. En cada plan, las atenciones ya incluyen el deducible aplicado. El total suma lo que pagas por esas atenciones y la prima de 12 meses. Desliza la tabla hacia el lado para ver todos los planes.</p>
 
       <div class="grafico">
         <p class="eje">Lo que pagarías en un año: atenciones y remedios + precio del seguro</p>
@@ -342,7 +479,7 @@ footer.aviso ul{padding-left:18px}
 
       <div class="opciones" id="opciones"></div>
 
-      <p class="ojo"><strong>Ojo antes de contratar:</strong> declara las situaciones de salud que te consulten. Una preexistencia conocida o diagnosticada puede limitar o excluir cobertura; confirma por escrito la respuesta de cada aseguradora. Marca “No contar reembolso” en los gastos que quedarían excluidos. El cálculo incluye solo las atenciones ingresadas y no cuantifica imprevistos como una hospitalización, cirugía o parto.</p>
+      <p class="ojo"><strong>Ojo antes de contratar:</strong> declara las situaciones de salud que te consulten. Confirma por escrito preexistencias, carencias y requisitos especiales de cada prestación; el simulador no puede verificarlos automáticamente. Marca “No contar reembolso” en los gastos que quedarían excluidos. El cálculo incluye solo los gastos ingresados y supone una distribución uniforme de las atenciones habituales durante el año.</p>
     </div>
   </div>
 </section>
@@ -362,7 +499,7 @@ footer.aviso ul{padding-left:18px}
 
       <label class="campo" for="bonifPct" id="bonifLabel">¿Qué % cubre Fonasa?
         <span class="hint">Pon 0 si no tienes bono Fonasa.</span></label>
-      <span class="peso" style="width:100%" id="bonifFila"><input type="number" id="bonifPct" min="0" max="100" step="1" value="40">%</span>
+      <span class="peso" style="width:100%" id="bonifFila"><input type="number" id="bonifPct" min="0" max="100" step="1" value="50">%</span>
 
       <label class="campo" for="cantidad" id="cantLabel">Cantidad</label>
       <input type="number" id="cantidad" min="1" step="1" value="1">
@@ -436,7 +573,7 @@ footer.aviso ul{padding-left:18px}
   <ul>
     <li>BICE VIDA Elite se incluye como ejercicio: es el plan más caro de BICE.</li>
     <li>BCI: los topes ambulatorios de UF 10 se aplican por grupo de prestaciones, que es la lectura más directa del documento.</li>
-    <li>BICE (Premium y Elite): se asume que el tope de día cama de UF 2 es por día.</li>
+    <li>BICE (Premium y Elite): se aplica la bonificación mínima del 50% donde el cuadro de beneficios la indica. Remedios, salud mental, óptica y ambulancia no tienen ese mínimo. Se asume que el tope de día cama de UF 2 es por día.</li>
     <li>Bupa: sus clínicas están fuera de la Región de Coquimbo, así que en La Serena no aplican sus porcentajes extra de red. Tampoco reembolsa medicamentos ambulatorios.</li>
   </ul>
 </footer>
@@ -444,10 +581,14 @@ footer.aviso ul{padding-left:18px}
 <div class="tip" id="tip" hidden></div>
 
 <script>
-const UF_POR_DEFECTO = 41226.39;
+const UF_POR_DEFECTO = 41231.70;
 let VALOR_UF = UF_POR_DEFECTO;
 // Prima bruta mensual en UF, titular sin dependientes, según las condiciones particulares.
 const PRIMA_UF = {bice: 0.9547, elite: 1.4911};
+const PRIMA_UF_POR_CARGAS = {
+  bice:[0.9547, 1.7663, 2.3869, 3.1506, 3.8189],
+  elite:[1.4911, 2.7584, 3.7276, 4.9204, 5.9642],
+};
 const ORDEN = ['bci', 'bice', 'elite', 'bupa'];
 
 // `buscar`: sinónimos para el buscador (se compara sin tildes ni mayúsculas).
@@ -503,23 +644,17 @@ function unidadBice(c, cob, pasos) {
   if (cob.bmi && this.aplicaBmi) {
     const considerada = Math.max(b, 0.5 * v);
     base = v - considerada;
-    if (considerada > b) razonBase = `${this.nombre} exige que Fonasa cubra al menos el 50%. ${comoCubrio(c)}, calcula sobre la mitad del precio`;
+    if (considerada > b) razonBase = 'Fonasa cubrió menos del 50% que exige BICE';
     pasos.push(considerada > b
       ? `Fonasa pagó menos que la bonificación mínima exigida (50%), así que ${this.nombre} calcula como si hubiera pagado ${fmtMonto(considerada)}. Base = ${fmtMonto(base)}.`
       : `Fonasa pagó más que la bonificación mínima exigida (50%). Base = copago = ${fmtMonto(base)}.`);
   } else {
     base = v - b;
-    pasos.push(cob.bmi
-      ? `${this.nombre} calcula sobre lo que pagaste después de Fonasa: ${fmtMonto(base)}.`
-      : `Este ítem no exige bonificación mínima. Base = copago = ${fmtMonto(base)}.`);
+    pasos.push(`Este ítem no exige bonificación mínima. Base = copago = ${fmtMonto(base)}.`);
   }
-  // Aviso cuando Fonasa cubre menos del 50% pero esta atención está exenta del mínimo (ej. salud mental).
-  const exentoMinimo = !cob.bmi && b < 0.5 * v
-    ? `En ${nombreAtencion(c)}, ${this.nombre} no exige un mínimo de cobertura Fonasa. Aplica el ${pctTxt(pct)} sobre todo lo que pagaste`
-    : null;
   pasos.push(con ? 'Hubo bono Fonasa: se usa el porcentaje "con bonificación".'
                  : 'No hubo bono Fonasa: se usa el porcentaje "sin bonificación".');
-  return {base, pct, pctNota, razonBase, exentoMinimo, evento: cob.evento ?? null, grupo: cob.grupo, grupoTope: cob.grupoTope};
+  return {base, pct, pctNota, razonBase, evento: cob.evento ?? null, grupo: cob.grupo, grupoTope: cob.grupoTope};
 }
 
 const POLIZAS = {
@@ -564,31 +699,29 @@ const POLIZAS = {
     unidad(c, cob, pasos) {
       const v = c.valor, b = c.bonif;
       const pct = cob.pct ?? 0.80;
-      const bmi = c.prestador === 'premium' ? 0.70 : (c.sistema === 'isapre' ? 0.50 : 0.35);
-      let base, razonBase = null, exentoMinimo = null;
+      let base, razonBase = null;
       if (cob.sinPrevisional) {
         // Remedios y óptica están exentos de la bonificación mínima: BCI reembolsa sobre lo pagado, con o sin Fonasa.
         base = v - b;
-        if (b < bmi * v) exentoMinimo = `En ${nombreAtencion(c)}, BCI no exige bono ni mínimo de Fonasa. Aplica el ${pctTxt(pct)} sobre todo lo que pagaste`;
         pasos.push(`Este ítem no exige bono Fonasa: BCI reembolsa sobre lo que pagaste (${fmtMonto(base)}).`);
       } else if (b <= 0) {
         base = 0.10 * v;
-        razonBase = 'Sin bono Fonasa, BCI calcula solo sobre el 10% del precio';
+        razonBase = 'Sin bono Fonasa, BCI considera solo el 10% del precio';
         pasos.push(`Sin bono Fonasa, BCI calcula sobre el 10% del precio: ${fmtMonto(base)}.`);
       } else if (cob.bmi) {
+        const bmi = c.prestador === 'premium' ? 0.70 : (c.sistema === 'isapre' ? 0.50 : 0.35);
         const considerada = Math.max(b, bmi * v);
         base = v - considerada;
-        if (considerada > b) razonBase = `BCI exige que Fonasa cubra al menos el ${pctTxt(bmi)}. ${comoCubrio(c)}, calcula sobre el ${pctTxt(1 - bmi)} del precio`;
+        if (considerada > b) razonBase = `Fonasa cubrió menos del ${pctTxt(bmi)} que exige BCI`;
         pasos.push(considerada > b
           ? `Fonasa pagó menos que la bonificación mínima exigida (${pctTxt(bmi)}), así que BCI calcula como si hubiera pagado ${fmtMonto(considerada)}. Base = ${fmtMonto(base)}.`
           : `Fonasa pagó más que la bonificación mínima exigida (${pctTxt(bmi)}). Base = copago = ${fmtMonto(base)}.`);
       } else {
         base = v - b;
-        if (b < bmi * v) exentoMinimo = `En ${nombreAtencion(c)}, BCI no exige un mínimo de cobertura Fonasa. Aplica el ${pctTxt(pct)} sobre todo lo que pagaste`;
         pasos.push(`Este ítem no exige bonificación mínima. Base = copago = ${fmtMonto(base)}.`);
       }
       const pctNota = cob.pct ? {0.60:'genéricos', 0.45:'bioequivalentes', 0.35:'de marca'}[cob.pct] : null;
-      return {base, pct, pctNota, razonBase, exentoMinimo, evento: cob.evento ?? null, grupo: cob.grupo, grupoTope: cob.grupoTope};
+      return {base, pct, pctNota, razonBase, evento: cob.evento ?? null, grupo: cob.grupo, grupoTope: cob.grupoTope};
     },
   },
 
@@ -596,7 +729,6 @@ const POLIZAS = {
     nombre: 'BICE VIDA Premium',
     topeGlobal: 400,
     pctCon: 0.70, pctSin: 0.35,
-    // BMI de 50% según el cuadro: si Fonasa cubre menos del 50%, calcula sobre la mitad del precio (base reducida).
     aplicaBmi: true,
     elegible: c => c.sistema !== 'ninguno',
     motivoNoElegible: () => 'BICE exige estar afiliado a Isapre o Fonasa. Sin afiliación no hay cobertura.',
@@ -611,8 +743,7 @@ const POLIZAS = {
       cirugia_amb:  {grupo:'cirugia_amb', grupoTope:70, bmi:true},
       kine:         {grupo:'kine_fono', grupoTope:20, bmi:true},
       dia_cama:     {evento:2, bmi:true, nota:'BICE: se asume que el tope de día cama (UF 2) es por día.'},
-      // El cuadro no tiene línea propia para UTI/UCI; se liquida como "Días cama hospitalización".
-      uci:          {evento:2, bmi:true, nota:'BICE no distingue UTI/UCI: se calcula como "Días cama hospitalización" (tope UF 2 por día). Confírmalo con BICE.'},
+      uci:          {no:true, motivo:'BICE no incluye UTI/UCI como línea propia en su cuadro de beneficios. Consultar a la aseguradora si se reembolsa como día cama o servicios hospitalarios.'},
       hosp:         {bmi:true},
       parto:        {grupo:'parto', grupoTope:10, bmi:true},
       cesarea:      {grupo:'cesarea', grupoTope:15, bmi:true},
@@ -629,7 +760,7 @@ const POLIZAS = {
       ambulancia:   {con:0.70, sin:0.70, grupo:'ambulancia', grupoTope:5},
       nutricionista:{no:true, motivo:'BICE Premium no cubre nutricionista (solo "consultas médicas").'},
       preventivo:   {bmi:true},
-      pap:          {no:true, motivo:'El PAP preventivo no figura en el cuadro de BICE Premium. Si te lo pidió un médico, simúlalo como "Exámenes de laboratorio".'},
+      pap:          {no:true, motivo:'El PAP preventivo no figura en el cuadro de beneficios de BICE Premium.'},
       preventivo_urologico:{no:true, motivo:'El estudio preventivo urológico no figura en el cuadro de beneficios de BICE Premium.'},
       bariatrica:   {no:true, motivo:'La cirugía bariátrica no figura en el cuadro de beneficios de BICE Premium.'},
       aborto:       {grupo:'aborto', grupoTope:10, bmi:true},
@@ -643,7 +774,7 @@ const POLIZAS = {
     ejercicio: true,
     topeGlobal: 600,
     pctCon: 0.80, pctSin: 0.40,
-    aplicaBmi: true, // Misma BMI de 50% que BICE Premium.
+    aplicaBmi: true,
     elegible: c => c.sistema !== 'ninguno',
     motivoNoElegible: () => 'BICE exige estar afiliado a Isapre o Fonasa. Sin afiliación no hay cobertura.',
     deducible: () => 0.5,
@@ -651,17 +782,17 @@ const POLIZAS = {
     cob: {
       consulta:     {evento:1, bmi:true},
       urgencia:     {evento:1, bmi:true},
-      nutricionista:{grupo:'nutricionista', grupoTope:20, bmi:true, nota:'BICE Elite: nutricionista al 80% con bono Fonasa y al 40% sin bono. Si Fonasa cubre menos del 50% (o nada), calcula sobre la mitad del precio.'},
+      nutricionista:{grupo:'nutricionista', grupoTope:20, bmi:true, nota:'BICE Elite: nutricionista al 80% con bono Fonasa y al 40% sin bono, sobre una base que considera la bonificación mínima del 50%.'},
       lab:          {grupo:'examenes', grupoTope:20, bmi:true},
       imagen:       {grupo:'examenes', grupoTope:20, bmi:true},
       preventivo:   {grupo:'preventivo_mama', grupoTope:5, bmi:true},
-      pap:          {no:true, motivo:'El PAP preventivo no figura en el cuadro de BICE Elite. Si te lo pidió un médico, simúlalo como "Exámenes de laboratorio".'},
+      pap:          {no:true, motivo:'El PAP preventivo no figura en el cuadro de beneficios de BICE Elite.'},
       preventivo_urologico:{grupo:'preventivo_urologico', grupoTope:5, bmi:true},
       procedimiento:{grupo:'procedimientos', grupoTope:20, bmi:true},
       cirugia_amb:  {grupo:'cirugia_amb', grupoTope:70, bmi:true},
       kine:         {grupo:'kine_fono', grupoTope:20, bmi:true},
       dia_cama:     {evento:2, bmi:true, nota:'BICE Elite: se asume que el tope de día cama (UF 2) es por día.'},
-      uci:          {evento:2, bmi:true, nota:'BICE Elite no distingue UTI/UCI: se calcula como "Días cama hospitalización" (tope UF 2 por día). Confírmalo con BICE.'},
+      uci:          {no:true, motivo:'BICE Elite no incluye UTI/UCI como línea propia en su cuadro de beneficios. Consultar a la aseguradora si se reembolsa como día cama o servicios hospitalarios.'},
       hosp:         {bmi:true},
       bariatrica:   {no:true, motivo:'La cirugía bariátrica no figura en el cuadro de beneficios de BICE Elite.'},
       parto:        {grupo:'parto', grupoTope:10, bmi:true},
@@ -737,28 +868,27 @@ const POLIZAS = {
           // Cuadro: "Consultas médicas no cubiertas por el sistema previsional": sin tope por evento, UF 2 al año.
           const base = v * (1 - bmi);
           pasos.push(`Consulta médica sin bono: Bupa aplica la bonificación mínima (${pctTxt(bmi)}). Base = ${fmtMonto(base)}.`);
-          return {base, pct:0.70, pctNota:'consulta sin bono Fonasa', razonBase:`Sin bono Fonasa, Bupa calcula sobre el ${pctTxt(1 - bmi)} del precio`,
+          return {base, pct:0.70, pctNota:'consulta sin bono Fonasa', razonBase:`Sin bono Fonasa, Bupa considera el ${pctTxt(1 - bmi)} del precio`,
                   evento:null, grupo:'consultas_sin_bonif', grupoTope:2};
         }
         return {no:true, motivo:'Bupa no te devuelve nada si no usas bono Fonasa (salvo consultas médicas).'};
       }
-      let base, razonBase = null, exentoMinimo = null;
+      let base, razonBase = null;
       if (cob.bmi) {
         base = Math.min(v * (1 - bmi), v - b);
-        if (v * (1 - bmi) < v - b) razonBase = `Bupa exige que Fonasa cubra al menos el ${pctTxt(bmi)}. ${comoCubrio(c)}, calcula sobre el ${pctTxt(1 - bmi)} del precio`;
+        if (v * (1 - bmi) < v - b) razonBase = `Fonasa cubrió menos del ${pctTxt(bmi)} que exige Bupa`;
         pasos.push(v * (1 - bmi) < v - b
           ? `Fonasa pagó menos que la bonificación mínima exigida (${pctTxt(bmi)}): Bupa calcula sobre ${fmtMonto(base)}, no sobre el copago real.`
           : `Fonasa pagó más que la bonificación mínima exigida (${pctTxt(bmi)}). Base = copago = ${fmtMonto(base)}.`);
       } else {
         base = v - b;
-        if (b < bmi * v) exentoMinimo = `En ${nombreAtencion(c)}, Bupa no exige un mínimo de cobertura Fonasa. Aplica el 70% sobre todo lo que pagaste`;
         pasos.push(`Este ítem no exige bonificación mínima. Base = copago = ${fmtMonto(base)}.`);
       }
       let extra = 0;
       if (['bupa','bupa_antofagasta'].includes(c.prestador) && ['lab','imagen','dia_cama'].includes(c.prestacion)) extra = 0.10;
       if (c.prestador === 'integramedica' && ['lab','imagen'].includes(c.prestacion)) extra = 0.12;
       if (extra) pasos.push(`Beneficio One Bupa: +${pctTxt(extra)} por atenderte en la red Bupa.`);
-      return {base, pct: 0.70 + extra, pctNota: extra ? `incluye +${pctTxt(extra)} One Bupa` : 'con bono Fonasa', razonBase, exentoMinimo,
+      return {base, pct: 0.70 + extra, pctNota: extra ? `incluye +${pctTxt(extra)} One Bupa` : 'con bono Fonasa', razonBase,
               evento: cob.evento ?? null, grupo: cob.grupo, grupoTope: cob.grupoTope};
     },
   },
@@ -768,7 +898,10 @@ function fmtUF(v) {
   return 'UF ' + v.toLocaleString('es-CL', {minimumFractionDigits:2, maximumFractionDigits:2});
 }
 function fmtCLP(uf) {
-  return Math.round(uf * VALOR_UF).toLocaleString('es-CL', {style:'currency', currency:'CLP', maximumFractionDigits:0});
+  return fmtPesos(uf * VALOR_UF);
+}
+function fmtPesos(pesos) {
+  return Math.round(pesos).toLocaleString('es-CL', {style:'currency', currency:'CLP', maximumFractionDigits:0});
 }
 // Montos en pesos, con su equivalente en UF (los topes de las pólizas están en UF).
 function fmtMonto(uf) {
@@ -776,13 +909,6 @@ function fmtMonto(uf) {
 }
 function pctTxt(p) {
   return Math.round(p * 100) + '%';
-}
-// Para explicar la base: nombre de la atención y % que cubrió Fonasa (truncado, para no mostrar "50%" si fue 49,6%).
-function nombreAtencion(c) {
-  return PRESTACIONES[c.prestacion].label.toLowerCase();
-}
-function comoCubrio(c) {
-  return c.bonif > 0 ? `Como cubrió ${Math.floor(c.bonif / c.valor * 100)}%` : 'Como Fonasa no cubrió nada';
 }
 
 const SINGULAR = {
@@ -891,8 +1017,7 @@ function evaluar(key, c) {
 
   return {key, estado:'ok', reembolso, copagoSistema, copagoFinal, pasos, notas, topes, deducibleAplicado: descuento,
           grupos: anuales.map(([g]) => g),
-          base: u.base, pct: u.pct, pctNota: u.pctNota, razonBase: u.razonBase, exentoMinimo: u.exentoMinimo,
-          copagoUnidad: c.valor - c.bonif, cantidad: c.cantidad,
+          base: u.base, pct: u.pct, pctNota: u.pctNota, razonBase: u.razonBase, copagoUnidad: c.valor - c.bonif, cantidad: c.cantidad,
           deducibleAnual: P.deducible(c)};
 }
 
@@ -904,14 +1029,38 @@ function compartenTope(P, grupo, actual) {
 }
 
 const $ = id => document.getElementById(id);
-const radio = name => document.querySelector(`input[name="${name}"]:checked`).value;
 
 function num(id) {
   const n = parseFloat($(id).value);
   return Number.isFinite(n) && n > 0 ? n : 0;
 }
+function copagoConFonasa(precio, porcentaje) {
+  return precio * (1 - Math.min(100, Math.max(0, porcentaje)) / 100);
+}
+function sesionesAnuales(cantidad, periodo) {
+  return Math.round(cantidad * (periodo === 'anio' ? 1 : 12));
+}
+function cambiarPeriodoSesiones(id) {
+  const selector = $(`${id}Periodo`);
+  const anterior = selector.dataset.anterior || 'mes';
+  const anual = sesionesAnuales(num(`${id}N`), anterior);
+  $(`${id}N`).value = selector.value === 'anio' ? anual : Math.round(anual / 12 * 100) / 100;
+  $(`${id}N`).step = selector.value === 'anio' ? '1' : '0.01';
+  $(`${id}N`).max = selector.value === 'anio' ? '366' : '31';
+  selector.dataset.anterior = selector.value;
+}
 function leerUF() {
   VALOR_UF = num('valorUF') || UF_POR_DEFECTO;
+}
+function primaBiceReferencia(key, cargas, valorUF) {
+  return Math.round(PRIMA_UF_POR_CARGAS[key][Math.min(4, Math.max(0, cargas))] * valorUF);
+}
+function actualizarPrimasBice() {
+  const cargas = parseInt($('anioCargas').value, 10) || 0;
+  for (const key of Object.keys(PRIMA_UF_POR_CARGAS)) {
+    const campo = $(`prima_${key}`);
+    if (campo.dataset.cotizacion !== 'manual') campo.value = primaBiceReferencia(key, cargas, VALOR_UF);
+  }
 }
 // Seguros marcados en "Precios mensuales"; también filtran "Una atención".
 function activos() {
@@ -924,20 +1073,78 @@ function badgeEjercicio(key) {
 // ---------- ¿Cuál me conviene? ----------
 // Otras atenciones del año: se pueden agregar y quitar. Los valores iniciales son ejemplos editables.
 let OTRAS = [
-  {id:'o1', k:'consulta', n:6, precio:45000, copago:27000},
-  {id:'o2', k:'lab', n:3, precio:60000, copago:30000},
-  {id:'o3', k:'imagen', n:1, precio:50000, copago:25000},
+  {id:'o1', k:'consulta', n:6, precio:45000, bonifPct:50, ordenMedica:true},
+  {id:'o2', k:'lab', n:3, precio:60000, bonifPct:50, ordenMedica:true},
+  {id:'o3', k:'imagen', n:1, precio:50000, bonifPct:50, ordenMedica:true},
 ];
 let siguienteOtra = 4;
 const NO_AGREGABLES = ['salud_mental', 'nutricionista', 'med_generico', 'med_bio', 'med_marca'];
+let MEDICAMENTOS = [
+  {id:'med', k:'med_generico', n:12, precio:25000, mes:null, ordenMedica:true},
+];
+let siguienteMedicamento = 1;
+const MESES_ANIO = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+function pintarMedicamentos() {
+  $('medicamentos').innerHTML = MEDICAMENTOS.map((m, i) => `
+    <div class="otra medicamento" data-med-id="${m.id}">
+      <div class="otra-head"><strong>Gasto de farmacia ${i + 1}</strong><button type="button" class="quitar" data-quitar-med="${m.id}">Quitar</button></div>
+      <div class="campo-simulacion" style="margin-top:10px"><label for="tipo_${m.id}">Tipo de remedio</label><select id="tipo_${m.id}" data-med-campo="tipo">${['med_generico','med_bio','med_marca'].map(k => `<option value="${k}" ${m.k === k ? 'selected' : ''}>${PRESTACIONES[k].label}</option>`).join('')}</select></div>
+      <div class="campos-simulacion">
+        <div class="campo-simulacion"><label for="compras_${m.id}">Compras en el año</label><span class="stepper"><button type="button" class="step" data-target="compras_${m.id}" data-delta="-1" aria-label="Una compra menos">−</button><input type="number" id="compras_${m.id}" data-med-campo="n" min="0" max="366" step="1" value="${m.n}"><button type="button" class="step" data-target="compras_${m.id}" data-delta="1" aria-label="Una compra más">+</button></span></div>
+        <div class="campo-simulacion"><label for="precio_${m.id}">Gasto por compra</label><span class="peso">$<input type="number" id="precio_${m.id}" data-med-campo="precio" min="0" step="1000" value="${m.precio}"></span></div>
+      </div>
+      <div class="campo-simulacion" style="margin-top:12px"><label for="mes_${m.id}">Mes de estas compras</label><select id="mes_${m.id}" data-med-campo="mes"><option value="0" ${m.mes == null ? 'selected' : ''}>Repartidas en el año</option>${MESES_ANIO.map((nombre, j) => `<option value="${j+1}" ${m.mes === j+1 ? 'selected' : ''}>${nombre}</option>`).join('')}</select></div>
+      <div class="opciones-atencion">
+        <label><input type="checkbox" data-med-campo="ordenMedica" ${m.ordenMedica !== false ? 'checked' : ''}> Tengo receta médica para estos remedios</label>
+        <label><input type="checkbox" data-med-campo="farmaciaBupa" ${m.farmaciaBupa ? 'checked' : ''}> Compra en farmacia en convenio con Bupa y remedios incluidos en su descuento</label>
+        <label><input type="checkbox" data-med-campo="sinReembolso" ${m.sinReembolso ? 'checked' : ''}> No contar reembolso si la póliza los excluye</label>
+      </div>
+    </div>`).join('');
+}
+
+function leerMedicamentos() {
+  for (const m of MEDICAMENTOS) {
+    const fila = document.querySelector(`.medicamento[data-med-id="${m.id}"]`);
+    if (!fila) continue;
+    const campo = c => fila.querySelector(`[data-med-campo="${c}"]`);
+    const numero = c => Math.max(0, parseFloat(campo(c).value) || 0);
+    m.k = campo('tipo').value;
+    m.n = Math.round(numero('n'));
+    m.precio = numero('precio');
+    m.mes = numero('mes') || null;
+    m.ordenMedica = campo('ordenMedica').checked;
+    m.farmaciaBupa = campo('farmaciaBupa').checked;
+    m.sinReembolso = campo('sinReembolso').checked;
+  }
+}
+
+function agregarGastoFarmacia() {
+  leerMedicamentos();
+  MEDICAMENTOS.push({id:`med${siguienteMedicamento++}`, k:'med_marca', n:1, precio:0, mes:null, ordenMedica:true});
+  pintarMedicamentos();
+}
+
+function quitarGastoFarmacia(id) {
+  leerMedicamentos();
+  MEDICAMENTOS = MEDICAMENTOS.filter(m => m.id !== id);
+  pintarMedicamentos();
+}
 
 function pintarOtras() {
   $('otras').innerHTML = OTRAS.map(o => `
     <div class="otra" data-id="${o.id}">
       <div class="otra-head"><strong>${PRESTACIONES[o.k].label}</strong><button type="button" class="quitar" data-quitar="${o.id}">Quitar</button></div>
-      <div class="frase"><span class="stepper"><button type="button" class="step" data-target="n_${o.id}" data-delta="-1" aria-label="Una vez menos">−</button><input type="number" id="n_${o.id}" data-campo="n" min="0" max="60" value="${o.n}" aria-label="Veces al año"><button type="button" class="step" data-target="n_${o.id}" data-delta="1" aria-label="Una vez más">+</button></span> veces al año</div>
-      <div class="frase">Cuesta <span class="peso">$<input type="number" data-campo="precio" min="0" step="1000" value="${o.precio}" aria-label="Precio de ${PRESTACIONES[o.k].label}"></span> y pagas <span class="peso">$<input type="number" data-campo="copago" min="0" step="1000" value="${o.copago}" aria-label="Lo que pagas después de Fonasa"></span></div>
-      <label class="frase"><input type="checkbox" data-campo="sinReembolso" ${o.sinReembolso ? 'checked' : ''}> No contar reembolso de esta atención</label>
+      <div class="campos-simulacion">
+        <div class="campo-simulacion"><label for="n_${o.id}">Veces al año</label><span class="stepper"><button type="button" class="step" data-target="n_${o.id}" data-delta="-1" aria-label="Una vez menos al año">−</button><input type="number" id="n_${o.id}" data-campo="n" min="0" max="60" value="${o.n}"><button type="button" class="step" data-target="n_${o.id}" data-delta="1" aria-label="Una vez más al año">+</button></span></div>
+        <div class="campo-simulacion"><label for="precio_${o.id}">Precio por atención</label><span class="peso">$<input type="number" id="precio_${o.id}" data-campo="precio" min="0" step="1000" value="${o.precio}"></span></div>
+        <div class="campo-simulacion"><label for="bonif_${o.id}">Fonasa cubre</label><span class="peso"><input type="number" id="bonif_${o.id}" data-campo="bonifPct" min="0" max="100" step="1" value="${o.bonifPct}">%</span></div>
+      </div>
+      <div class="opciones-atencion">
+        <label><input type="checkbox" data-campo="ordenMedica" ${o.ordenMedica !== false ? 'checked' : ''}> Tengo orden o indicación médica para esta atención</label>
+        ${o.k.startsWith('med_') ? `<label><input type="checkbox" data-campo="farmaciaBupa" ${o.farmaciaBupa ? 'checked' : ''}> Compra en farmacia en convenio con Bupa y remedios incluidos en su descuento</label>` : ''}
+        <label><input type="checkbox" data-campo="sinReembolso" ${o.sinReembolso ? 'checked' : ''}> No contar reembolso de esta atención</label>
+      </div>
     </div>`).join('');
   const usadas = new Set(OTRAS.map(o => o.k));
   $('nuevaAtencion').innerHTML = '<option value="">+ Agregar otra atención…</option>' + Object.entries(PRESTACIONES)
@@ -953,34 +1160,44 @@ function leerOtras() {
     const n = c => { const v = parseFloat(campo(c)); return Number.isFinite(v) && v > 0 ? v : 0; };
     o.n = Math.round(n('n'));
     o.precio = n('precio');
-    o.copago = campo('copago') === '' ? o.precio : Math.min(n('copago'), o.precio);
+    o.bonifPct = Math.min(n('bonifPct'), 100);
+    o.ordenMedica = fila.querySelector('[data-campo="ordenMedica"]').checked;
+    o.farmaciaBupa = !!fila.querySelector('[data-campo="farmaciaBupa"]')?.checked;
     o.sinReembolso = fila.querySelector('[data-campo="sinReembolso"]').checked;
   }
 }
 
 function leerPlan() {
   leerUF();
+  actualizarPrimasBice();
   leerOtras();
+  leerMedicamentos();
   const sesion = (id, k, nombre) => {
     const precio = num(`${id}Precio`);
-    const conBono = radio(`${id}Bono`) === 'si';
-    $(`${id}CopagoFila`).hidden = !conBono;
-    return {id, k, nombre, unidad:'sesión', nAnual: Math.round(num(`${id}N`)) * 12, precio,
-            copago: conBono ? Math.min(num(`${id}Copago`), precio) : precio,
-            sinReembolso: $(`${id}SinReembolso`).checked};
+    return {id, k, nombre, unidad:'sesión', nAnual:sesionesAnuales(num(`${id}N`), $(`${id}Periodo`).value), precio,
+            sinReembolso:$(`${id}SinReembolso`).checked, ordenMedica:$(`${id}Orden`).checked,
+            copago:copagoConFonasa(precio, num(`${id}BonifPct`))};
   };
-  const gastoMed = num('medGasto');
   const prima = k => $(`prima_${k}`).value === '' ? null : num(`prima_${k}`);
   return {
     items: [
       sesion('psi', 'salud_mental', 'Psicóloga'),
       sesion('nut', 'nutricionista', 'Nutricionista'),
       ...OTRAS.map(o => ({id:o.id, k:o.k, nombre:PRESTACIONES[o.k].label, unidad:SINGULAR[PRESTACIONES[o.k].unidad],
-                          nAnual:o.n, precio:o.precio, copago:o.copago, sinReembolso:!!o.sinReembolso})),
-      {id:'med', k: radio('medTipo'), nombre:'Remedios', unidad:'mes', nAnual: gastoMed > 0 ? 12 : 0, precio:gastoMed, copago:gastoMed,
-       sinReembolso: $('medSinReembolso').checked},
+                          nAnual:o.n, precio:o.precio, copago:copagoConFonasa(o.precio, o.bonifPct), ordenMedica:o.ordenMedica,
+                          farmaciaBupa:!!o.farmaciaBupa, sinReembolso:!!o.sinReembolso})),
+      ...MEDICAMENTOS.map((m, i) => ({id:m.id, k:m.k,
+        nombre:PRESTACIONES[m.k].label + (MEDICAMENTOS.length > 1 ? ` (${i+1})` : ''), unidad:'compra',
+        nAnual:m.n, precio:m.precio, copago:m.precio, mes:m.mes,
+        ordenMedica:m.ordenMedica, farmaciaBupa:!!m.farmaciaBupa, sinReembolso:!!m.sinReembolso})),
+      {id:'ges', k:'ges_deducible', nombre:'Deducible GES/CAEC', unidad:'evento', nAnual:num('gesAnioMonto') > 0 ? 1 : 0,
+       mes:parseInt($('gesAnioMes').value, 10), precio:num('gesAnioMonto'), copago:num('gesAnioMonto'),
+       ges:true, gesRed:$('gesAnioRed').checked},
     ],
-    derivacion: radio('deriv') === 'si',
+    prestador:$('anioPrestador').value,
+    periodoPsicologia:$('psiPeriodo').value,
+    cargas:parseInt($('anioCargas').value, 10) || 0,
+    redPreferente:$('anioRed').checked,
     primas: Object.fromEntries(ORDEN.map(k => [k, prima(k)])),
   };
 }
@@ -988,53 +1205,82 @@ function leerPlan() {
 // Reparte las atenciones de cada ítem en los 12 meses para que el deducible y los topes anuales se consuman en orden.
 function simularAnio(plan, keys) {
   const sesiones = [];
+  const gastos = Object.fromEntries(plan.items.map(it => [it.id,
+    {cantidad:0, bruto:0, fonasa:0, sinSeguro:0}]));
   for (let m = 0; m < 12; m++) {
     for (const it of plan.items) {
-      const veces = Math.floor((m + 1) * it.nAnual / 12) - Math.floor(m * it.nAnual / 12);
-      for (let i = 0; i < veces; i++) sesiones.push(it);
+      const veces = it.mes != null ? (m === it.mes - 1 ? it.nAnual : 0)
+        : Math.floor((m + 1) * it.nAnual / 12) - Math.floor(m * it.nAnual / 12);
+      for (let i = 0; i < veces; i++) {
+        sesiones.push({it, mes:m});
+        gastos[it.id].cantidad++;
+        gastos[it.id].bruto += it.precio / VALOR_UF;
+        gastos[it.id].fonasa += (it.precio - it.copago) / VALOR_UF;
+        gastos[it.id].sinSeguro += it.copago / VALOR_UF;
+      }
     }
   }
-  const sinSeguro = sesiones.reduce((s, it) => s + it.copago, 0) / VALOR_UF;
+  const sinSeguro = Object.values(gastos).reduce((s, g) => s + g.sinSeguro, 0);
 
   const filas = keys.map(key => {
     const P = POLIZAS[key];
-    let usadoDeducible = 0, usadoGlobal = 0;
-    const usados = {}, motivos = {}, avisos = new Set();
-    const devuelve = Object.fromEntries(plan.items.map(it => [it.id, 0]));
-    for (const it of sesiones) {
-      // Gasto que Ismary marcó como excluido (por ejemplo, una preexistencia): queda completo a su cargo.
+    let usadoDeducible = 0, usadoGlobal = 0, descuentoFarmacia = 0;
+    const usados = {}, motivos = {}, avisos = new Set(), basesReducidas = new Set();
+    const descuentoUsadoMes = Array.from({length:12}, () => ({receta:0, sinReceta:0}));
+    const porItem = Object.fromEntries(plan.items.map(it => [it.id,
+      {...gastos[it.id], reembolso:0, descuento:0, deducible:0, paga:gastos[it.id].sinSeguro}]));
+    for (const {it, mes} of sesiones) {
       if (it.sinReembolso) {
         motivos[it.id] = 'Se indicó que no debemos contar un reembolso para este gasto.';
         continue;
+      }
+      if (key === 'bupa' && it.farmaciaBupa) {
+        const tasa = it.k === 'med_generico' ? (it.ordenMedica ? 0.50 : 0.15)
+          : it.k === 'med_marca' ? (it.ordenMedica ? 0.30 : 0.10) : 0;
+        const grupo = it.ordenMedica ? 'receta' : 'sinReceta';
+        const disponible = Math.max(0, 25000 / VALOR_UF - descuentoUsadoMes[mes][grupo]);
+        const descuento = Math.min(disponible, it.copago / VALOR_UF * tasa);
+        descuentoFarmacia += descuento;
+        descuentoUsadoMes[mes][grupo] += descuento;
+        porItem[it.id].descuento += descuento;
+        porItem[it.id].paga -= descuento;
+        if (!tasa) avisos.add('El anexo de Bupa no precisa una tasa de descuento para bioequivalentes; no se estima ese beneficio.');
       }
       const cob = P.cob[it.k] || {};
       const valor = it.precio / VALOR_UF;
       const r = evaluar(key, {
         sistema:'fonasa', prestacion:it.k, cantidad:1, valor, bonif: (it.precio - it.copago) / VALOR_UF,
-        prestador:'general', cargas:0, ges:false, redPreferente:false,
-        // Los remedios del año se asumen recetados; la orden de derivación la indica Ismary.
-        ordenMedica: it.k.startsWith('med_') || plan.derivacion,
+        prestador:plan.prestador || 'general', cargas:plan.cargas || 0, ges:!!it.ges, gesRed:!!it.gesRed,
+        redPreferente:!!plan.redPreferente,
+        ordenMedica: it.ordenMedica ?? (it.k.startsWith('med_') ? plan.medReceta !== false : plan.derivacion !== false),
         usadoDeducible, usados, usadoGlobal,
       });
       if (r.estado !== 'ok') { motivos[it.id] = r.motivo; continue; }
-      usadoDeducible += r.deducibleAplicado;
-      usadoGlobal += r.reembolso;
+      usadoDeducible += r.deducibleAplicado || 0;
+      if (!(r.ges && key === 'bupa')) usadoGlobal += r.reembolso;
       // Cada tope anual que aplicó (incluidos los anidados o especiales) acumula lo reembolsado.
-      for (const g of r.grupos) usados[g] = (usados[g] || 0) + r.reembolso;
-      devuelve[it.id] += r.reembolso;
-      const agotado = r.topes.anuales.find(a => a.alcanzado);
+      for (const g of r.grupos || []) usados[g] = (usados[g] || 0) + r.reembolso;
+      porItem[it.id].reembolso += r.reembolso;
+      porItem[it.id].deducible += r.deducibleAplicado || 0;
+      porItem[it.id].paga -= r.reembolso;
+      if (r.razonBase) basesReducidas.add(it.nombre);
+      const agotado = r.topes?.anuales.find(a => a.alcanzado);
       if (agotado) avisos.add(`${it.nombre}: se acaba el tope anual (${fmtCLP(agotado.tope)}${agotado.comparte.length ? `, compartido con ${agotado.comparte.join(', ')}` : ''}); desde ahí no te devuelve más ese año.`);
       if (cob.nota) avisos.add(cob.nota);
+      for (const nota of r.notas || []) avisos.add(nota);
     }
+    const devuelve = Object.fromEntries(Object.entries(porItem).map(([id, cuenta]) => [id, cuenta.reembolso]));
     const total = Object.values(devuelve).reduce((s, v) => s + v, 0);
     const primaAnual = plan.primas[key] == null ? null : plan.primas[key] * 12 / VALOR_UF;
-    return {key, devuelve, motivos, total, bolsillo: sinSeguro - total, primaAnual,
-            costoTotal: primaAnual == null ? null : sinSeguro - total + primaAnual, avisos: [...avisos]};
+    if (basesReducidas.size) avisos.add(`La bonificación mínima redujo la base de cálculo en: ${[...basesReducidas].join(', ')}. El reembolso puede ser menor que el porcentaje del copago real.`);
+    const bolsillo = Object.values(porItem).reduce((s, cuenta) => s + cuenta.paga, 0);
+    return {key, devuelve, porItem, motivos, total, descuentoFarmacia, deducibleAplicado:usadoDeducible, bolsillo, primaAnual,
+            costoTotal: primaAnual == null ? null : bolsillo + primaAnual, avisos: [...avisos]};
   });
-  return {sinSeguro, filas};
+  return {sinSeguro, gastos, filas};
 }
 
-// Menor número de sesiones de psicóloga al mes desde el cual algún seguro cuesta menos que no tener seguro.
+// Referencia orientativa: prueba bloques de 12 sesiones, sin afirmar un umbral anual exacto.
 function puntoDeEquilibrio(plan, keys) {
   for (let n = 0; n <= 8; n++) {
     const p = {...plan, items: plan.items.map(it => it.id === 'psi' ? {...it, nAnual: n * 12} : it)};
@@ -1047,26 +1293,57 @@ function puntoDeEquilibrio(plan, keys) {
 
 function lineaPorQue(f, it) {
   const dev = f.devuelve[it.id];
-  if (dev > 0) return `<li><b>${it.nombre}:</b> te devuelve ${fmtCLP(dev)} al año (≈ ${fmtCLP(dev / it.nAnual)} por ${it.unidad}).</li>`;
+  if (dev > 0) return `<li><b>${it.nombre}:</b> te devuelve ${fmtCLP(dev)} al año${it.ges ? ' con la cobertura especial GES/CAEC' : ` (promedio ${fmtCLP(dev / it.nAnual)} por ${it.unidad}; la primera atención puede pagar el deducible)`}.</li>`;
   return `<li><b>${it.nombre}:</b> no te devuelve nada. ${f.motivos[it.id] || 'El deducible se lleva lo que te devolvería.'}</li>`;
+}
+
+// Reparte solo el redondeo visual para que las filas en pesos sumen el subtotal mostrado.
+function repartirPesos(montosUF) {
+  const reales = montosUF.map(m => Math.max(0, m * VALOR_UF));
+  const pesos = reales.map(Math.floor);
+  const faltan = Math.round(reales.reduce((s, v) => s + v, 0)) - pesos.reduce((s, v) => s + v, 0);
+  const indices = reales.map((v, i) => i).sort((a, b) => (reales[b] - pesos[b]) - (reales[a] - pesos[a]));
+  for (let i = 0; i < faltan; i++) pesos[indices[i]]++;
+  return pesos;
+}
+
+function tablaGastosAnuales(plan, gastos, filas) {
+  const items = plan.items.filter(it => gastos[it.id].cantidad > 0 && it.precio > 0);
+  const sin = repartirPesos(items.map(it => gastos[it.id].sinSeguro));
+  const con = filas.map(f => repartirPesos(items.map(it => f.porItem[it.id].paga)));
+  const subtotalSin = sin.reduce((s, v) => s + v, 0);
+  const subtotales = con.map(col => col.reduce((s, v) => s + v, 0));
+  const primas = filas.map(f => f.primaAnual == null ? null : Math.round(f.primaAnual * VALOR_UF));
+  const totales = subtotales.map((v, i) => primas[i] == null ? null : v + primas[i]);
+  return `<table class="cuenta-anual"><caption>Lo que tú pagarías en un año</caption>
+    <thead><tr><th scope="col">Gasto</th><th scope="col">Sin seguro complementario<small>Con Fonasa</small></th>${filas.map(f => `<th scope="col">${POLIZAS[f.key].nombre}${badgeEjercicio(f.key)}</th>`).join('')}</tr></thead>
+    <tbody>${items.map((it, i) => {
+      const porcentaje = it.precio > 0 ? Math.round((1 - it.copago / it.precio) * 1000) / 10 : 0;
+      return `<tr><th scope="row">${it.nombre}<small>${gastos[it.id].cantidad} ${it.unidad === 'mes' ? 'meses' : 'veces'} × ${fmtPesos(it.precio)} · Fonasa ${porcentaje}%</small></th><td>${fmtPesos(sin[i])}</td>${filas.map((f, j) => `<td>${fmtPesos(con[j][i])}</td>`).join('')}</tr>`;
+    }).join('') || `<tr><th scope="row">Sin atenciones ingresadas</th><td>${fmtPesos(0)}</td>${filas.map(() => `<td>${fmtPesos(0)}</td>`).join('')}</tr>`}
+    <tr class="subtotal"><th scope="row">Atenciones y remedios</th><td>${fmtPesos(subtotalSin)}</td>${filas.map((f, j) => `<td>${fmtPesos(subtotales[j])}<small>Incluye ${fmtCLP(f.deducibleAplicado)} de deducible</small></td>`).join('')}</tr>
+    <tr><th scope="row">+ Prima de 12 meses</th><td>${fmtPesos(0)}</td>${primas.map(p => `<td>${p == null ? 'Falta precio' : fmtPesos(p)}</td>`).join('')}</tr>
+    <tr class="total-anual"><th scope="row">Tú pagas en total</th><td>${fmtPesos(subtotalSin)}</td>${totales.map(t => `<td>${t == null ? 'Falta precio' : fmtPesos(t)}</td>`).join('')}</tr>
+    <tr><th scope="row">Frente a pagar sin seguro</th><td>Referencia</td>${totales.map(t => `<td class="${t != null && t < subtotalSin ? 'ahorro' : t != null && t > subtotalSin ? 'extra' : ''}">${t == null ? '—' : t === subtotalSin ? 'Mismo costo' : t < subtotalSin ? `Ahorras ${fmtPesos(subtotalSin - t)}` : `Pagas ${fmtPesos(t - subtotalSin)} más`}</td>`).join('')}</tr>
+    </tbody></table>`;
 }
 
 function renderAnual() {
   const plan = leerPlan();
   const keys = activos();
-  const {sinSeguro, filas} = simularAnio(plan, keys);
+  const {sinSeguro, gastos, filas} = simularAnio(plan, keys);
   const conPrecio = filas.filter(f => f.costoTotal != null).sort((a, b) => a.costoTotal - b.costoTotal);
   const sinPrecio = filas.filter(f => f.costoTotal == null);
   // Verde: la mejor entre las principales. Amarillo: el plan de ejercicio, solo si le gana a esa.
   const principales = conPrecio.filter(f => !POLIZAS[f.key].ejercicio);
-  // No se recomienda nada si falta la prima de alguna póliza principal seleccionada.
   const mejor = principales[0] || null;
   const principalesActivos = keys.filter(k => !POLIZAS[k].ejercicio);
   const faltaPrima = principalesActivos.some(k => plan.primas[k] == null);
-  const diferenciaMejorPesos = mejor ? Math.round((sinSeguro - mejor.costoTotal) * VALOR_UF) : null;
+  const diferenciaMejorPesos = mejor ? Math.round(sinSeguro * VALOR_UF) - Math.round(mejor.costoTotal * VALOR_UF) : null;
   const conviene = mejor && !faltaPrima && diferenciaMejorPesos > 0;
   const ejGana = mejor && !faltaPrima && conPrecio.find(f => POLIZAS[f.key].ejercicio && f.costoTotal < sinSeguro && f.costoTotal < mejor.costoTotal);
   const nombre = k => POLIZAS[k].nombre;
+  $('comparacionAnual').innerHTML = tablaGastosAnuales(plan, gastos, [...conPrecio, ...sinPrecio]);
 
   // Respuesta principal
   if (!keys.length) {
@@ -1080,13 +1357,13 @@ function renderAnual() {
     $('bajada').textContent = 'Ingresa el precio mensual de todas las pólizas principales seleccionadas.';
   } else if (conviene) {
     $('titular').textContent = `Con estos gastos, ${nombre(mejor.key)} cuesta menos`;
-    $('bajada').innerHTML = `Pagarías <strong>${fmtCLP(mejor.costoTotal)}</strong> al año en total, <strong>${fmtCLP(sinSeguro - mejor.costoTotal)} menos</strong> que sin seguro.`;
+    $('bajada').innerHTML = `Pagarías <strong>${fmtCLP(mejor.costoTotal)}</strong> al año en total, <strong>${fmtPesos(diferenciaMejorPesos)} menos</strong> que sin seguro complementario. En ambos casos se conserva Fonasa.`;
   } else if (diferenciaMejorPesos === 0) {
     $('titular').textContent = 'Con estos gastos, el costo es igual';
     $('bajada').innerHTML = `${nombre(mejor.key)} y pagar sin seguro costarían ${fmtCLP(sinSeguro)} al año. Revisa los límites y exclusiones antes de decidir.`;
   } else {
     $('titular').textContent = 'Hoy ningún seguro te ahorra dinero';
-    $('bajada').innerHTML = `Con las atenciones que ingresaste, los seguros seleccionados cuestan más de lo que devuelven. Sin seguro pagarías <strong>${fmtCLP(sinSeguro)}</strong> al año. La póliza con menor costo es ${nombre(mejor.key)}: ${fmtCLP(mejor.costoTotal - sinSeguro)} más al año.`;
+    $('bajada').innerHTML = `Con las atenciones que ingresaste, los seguros seleccionados cuestan más de lo que devuelven. Con Fonasa y sin seguro complementario pagarías <strong>${fmtCLP(sinSeguro)}</strong> al año. La póliza con menor costo es ${nombre(mejor.key)}: ${fmtPesos(-diferenciaMejorPesos)} más al año.`;
   }
   if (ejGana) $('bajada').innerHTML += ` <span class="ej-nota">Como ejercicio, ${nombre(ejGana.key)} saldría ${fmtCLP(mejor.costoTotal - ejGana.costoTotal)} más barato al año.</span>`;
   $('titular').classList.toggle('bien', !!conviene);
@@ -1110,9 +1387,7 @@ function renderAnual() {
   const nPsi = psi.nAnual / 12;
   let idea = '';
   if (principalesActivos.length && !faltaPrima && psi.precio > 0) {
-    if (!pe) idea = 'Aunque fueras 8 veces al mes a la psicóloga, ningún seguro te ahorraría dinero con estas atenciones.';
-    else if (pe.n > nPsi) idea = `Un seguro empezaría a convenirte si vas <strong>${pe.n} o más veces al mes</strong> a la psicóloga (${nombre(pe.key)}). Prueba con los botones + y −.`;
-    else if (pe.n > 0) idea = `Te conviene mientras vayas <strong>${pe.n} o más veces al mes</strong> a la psicóloga.`;
+    if (pe && pe.n > 0 && pe.n > nPsi) idea = `Como referencia, al probar <strong>${plan.periodoPsicologia === 'anio' ? `${pe.n * 12} sesiones al año` : `${pe.n} sesiones al mes`}</strong> de psicología, ${nombre(pe.key)} cuesta menos que pagar sin seguro. Los demás gastos se mantienen como los ingresaste; esta referencia prueba bloques de 12 sesiones.`;
   }
   $('idea').innerHTML = idea;
   $('idea').hidden = !idea;
@@ -1124,8 +1399,9 @@ function renderAnual() {
       <header><h3>${nombre(f.key)}${badgeEjercicio(f.key)}</h3>
         <span class="total">${f.costoTotal == null ? 'Falta su precio' : `${fmtCLP(f.costoTotal)} al año`}</span></header>
       <ul>
+        <li><b>Cuenta del año:</b> ${fmtCLP(sinSeguro)} en gastos después de Fonasa − ${fmtCLP(f.total)} que devuelve el seguro${f.descuentoFarmacia > 0 ? ` − ${fmtCLP(f.descuentoFarmacia)} de descuento en farmacia` : ''} = ${fmtCLP(f.bolsillo)} a tu cargo por atenciones y remedios${f.primaAnual == null ? '. Falta ingresar la prima para calcular el total.' : `; + ${fmtCLP(f.primaAnual)} de prima anual (${fmtCLP(f.primaAnual / 12)} al mes) = <b>${fmtCLP(f.costoTotal)} al año</b>.`}</li>
+        <li><b>Deducible de esta póliza:</b> ${f.deducibleAplicado > 0 ? `${fmtCLP(f.deducibleAplicado)} ya redujeron lo que devuelve el seguro. Ese monto está incluido en lo que queda a tu cargo; no se suma otra vez.` : 'No se descontó deducible en este escenario.'}</li>
         ${items.map(it => lineaPorQue(f, it)).join('')}
-        <li><b>El seguro:</b> ${f.primaAnual == null ? 'falta su precio mensual.' : `cuesta ${fmtCLP(f.primaAnual)} al año (${fmtCLP(f.primaAnual / 12)} al mes).`}</li>
       </ul>
       ${f.avisos.length ? `<details><summary>Letra chica</summary>${f.avisos.map(a => `<p class="nota">${a}</p>`).join('')}</details>` : ''}
     </article>`).join('');
@@ -1144,13 +1420,13 @@ const ANALISIS = [
   {necesidad:'Nutricionista hormonal', sub:'Sin bono Fonasa', p:{
     bci:  [1, 'No la reembolsa. Incluye gratis asesoría nutricional a distancia.'],
     bice: [0, 'No cubre nutricionista.'],
-    elite:[2, 'La única que la reembolsa: 40% sin bono, sobre la mitad del precio (≈ 20%). Tope UF 20 al año.'],
+    elite:[1, 'La única que la reembolsa: 40% sin bono sobre el 50% del precio por bonificación mínima (20% del precio). Tope UF 20 al año.'],
     bupa: [0, 'Solo con bono Fonasa y orden médica. Sin bono no cubre.'],
   }},
   {necesidad:'Medicina general y especialistas', sub:'Resfríos, ginecóloga, dermatóloga', p:{
     bci:  [3, '80% con bono, tope UF 1 por consulta y UF 10 al año. Telemedicina gratis e ilimitada (da recetas y órdenes). Acné severo: cubre todos los gastos. Sin bono: ≈ 8% efectivo antes de topes.'],
-    bice: [2, '70% con bono, tope UF 1 por consulta, sin tope anual. Si Fonasa cubre menos del 50%, calcula sobre la mitad del precio. Sin bono: 35% sobre la mitad.'],
-    elite:[3, '80% con bono, tope UF 1 por consulta, sin tope anual. Si Fonasa cubre menos del 50%, calcula sobre la mitad del precio. Sin bono: 40% sobre la mitad.'],
+    bice: [2, '70% con bono, tope UF 1 por consulta, sin tope anual. Si Fonasa cubre menos de 50%, se reduce la base.'],
+    elite:[3, '80% con bono, tope UF 1 por consulta, sin tope anual. Si Fonasa cubre menos de 50%, se reduce la base.'],
     bupa: [2, '70% con bono, tope UF 1 por consulta, sin tope anual. 4 videoconsultas al año gratis. Sin bono: cubre con tope UF 2 al año.'],
   }},
   {necesidad:'Remedios', sub:'Resfríos, dolor, tratamiento hormonal', p:{
@@ -1191,7 +1467,7 @@ const ANALISIS = [
   }},
   {necesidad:'Hospitalización o cirugía imprevista', sub:'', p:{
     bci:  [2, '80%, día cama UF 3, UTI UF 6; tope total UF 300 al año.'],
-    bice: [1, '70%, día cama UF 2 (UTI incluida, sin tope mayor); tope total UF 400.'],
+    bice: [1, '70%, día cama UF 2; UTI no figura; tope total UF 400.'],
     elite:[3, '80%, día cama UF 2; tope total UF 600 al año.'],
     bupa: [2, '70%, día cama UF 4, UTI UF 6; tope total UF 400. Cubre el deducible GES/CAEC.'],
   }},
@@ -1200,7 +1476,7 @@ const ANALISIS = [
 const OTROS_ASPECTOS = [
   ['Deducible anual', {bci:'UF 1', bice:'UF 0,5', elite:'UF 0,5', bupa:'UF 1 ($0 en red preferente)'}, true],
   ['Tope total al año', {bci:'UF 300', bice:'UF 400', elite:'UF 600', bupa:'UF 400'}],
-  ['Si no hay bono Fonasa', {bci:'80% del 10% del gasto (≈ 8% efectivo), salvo remedios y óptica', bice:'35% sobre la mitad del precio; psicología 70%', elite:'40% sobre la mitad del precio; psicología 80%', bupa:'No cubre la mayoría; consultas médicas hasta UF 2 al año'}],
+  ['Si no hay bono Fonasa', {bci:'80% del 10% del gasto (≈ 8% efectivo), salvo remedios y óptica', bice:'35% sobre la mitad del precio cuando aplica BMI; psicología 70% sobre el gasto efectivo', elite:'40% sobre la mitad del precio cuando aplica BMI; psicología 80% sobre el gasto efectivo', bupa:'No cubre la mayoría; consultas médicas hasta UF 2 al año'}],
   ['Exige orden médica', {bci:'No', bice:'No', elite:'No', bupa:'Sí: psicología, nutricionista y kinesiología'}],
   ['Edad máxima', {bci:'65 años', bice:'65 años', elite:'65 años', bupa:'Sin límite'}],
   ['Cómo se reembolsa', {bci:'Sin formulario; app y bono I-Med', bice:'Web o pago directo I-Med', elite:'Web o pago directo I-Med', bupa:'Formulario de reembolso'}],
@@ -1232,7 +1508,7 @@ function renderAnalisis() {
   const excluidas = atenciones.filter(it => it.sinReembolso);
   $('supuestosAnalisis').innerHTML = `<strong>Se está calculando con:</strong>
     ${detalle || 'ninguna atención ingresada'}${atenciones.length > 5 ? ` · y ${atenciones.length - 5} tipo(s) más` : ''}.
-    <span class="hint">Sin seguro: ${fmtCLP(sinSeguro)} al año después de Fonasa. ${excluidas.length ? `Sin reembolso simulado para: ${excluidas.map(it => it.nombre).join(', ')}. ` : ''}Confirma requisitos, carencias y exclusiones de cada póliza.</span>`;
+    <span class="hint">Sin seguro: ${fmtCLP(sinSeguro)} al año después de Fonasa. ${excluidas.length ? `Sin reembolso simulado para: ${excluidas.map(it => it.nombre).join(', ')}. ` : ''}El año parte con deducible y topes sin usar; órdenes, recetas y red se toman de “Simular un año”. Confirma requisitos, carencias y exclusiones de cada póliza.</span>`;
 
   if (!$('matriz').rows.length) {
     $('matriz').innerHTML = `<thead><tr><th>Situación</th>${ORDEN.map(k => `<th>${n(k)}${badgeEjercicio(k)}</th>`).join('')}</tr></thead>
@@ -1266,6 +1542,7 @@ function renderAnalisis() {
     return `<div class="comparacion-resultado ${destaca ? 'mejor' : ''}">
       <h3>${n(f.key)}${badgeEjercicio(f.key)}</h3>
       <p>Te reembolsa ${fmtCLP(f.total)} por las atenciones ingresadas.</p>
+      ${f.descuentoFarmacia > 0 ? `<p>Descuento en farmacia en convenio: ${fmtCLP(f.descuentoFarmacia)} (en caja, no reembolso).</p>` : ''}
       <p>Prima anual: ${f.primaAnual == null ? 'falta cotización' : fmtCLP(f.primaAnual)}.</p>
       <p class="costo">${f.costoTotal == null ? 'Sin costo total' : `${fmtCLP(f.costoTotal)} al año`}</p>
       ${diferencia == null ? '<p>Ingresa la prima para poder compararlo.</p>' :
@@ -1287,16 +1564,16 @@ function renderAnalisis() {
 
 // ---------- Una atención ----------
 const EJEMPLOS = [
-  {nombre:'Psicóloga con bono', d:{prestacion:'salud_mental', cantidad:1, valor:35000, bonifPct:40}},
+  {nombre:'Psicóloga con bono', d:{prestacion:'salud_mental', cantidad:1, valor:35000, bonifPct:50}},
   {nombre:'Nutricionista sin bono', d:{prestacion:'nutricionista', cantidad:1, valor:40000, bonifPct:0}},
-  {nombre:'Medicina general', d:{prestacion:'consulta', cantidad:1, valor:30000, bonifPct:40}},
-  {nombre:'Ginecóloga o dermatóloga', d:{prestacion:'consulta', cantidad:1, valor:45000, bonifPct:40}},
-  {nombre:'Kinesiología (10 sesiones)', d:{prestacion:'kine', cantidad:10, valor:25000, bonifPct:40}},
+  {nombre:'Medicina general', d:{prestacion:'consulta', cantidad:1, valor:30000, bonifPct:50}},
+  {nombre:'Ginecóloga o dermatóloga', d:{prestacion:'consulta', cantidad:1, valor:45000, bonifPct:50}},
+  {nombre:'Kinesiología (10 sesiones)', d:{prestacion:'kine', cantidad:10, valor:25000, bonifPct:50}},
   {nombre:'Ecografía transvaginal', d:{prestacion:'imagen', cantidad:1, valor:50000, bonifPct:50}},
   {nombre:'Mamografía preventiva', d:{prestacion:'preventivo', cantidad:1, valor:45000, bonifPct:50}},
   {nombre:'Exámenes de sangre', d:{prestacion:'lab', cantidad:1, valor:60000, bonifPct:50}},
   {nombre:'Remedio genérico', d:{prestacion:'med_generico', cantidad:1, valor:20000, bonifPct:0}},
-  {nombre:'Cirugía con hospitalización', d:{prestacion:'hosp', cantidad:1, valor:4100000, bonifPct:40}},
+  {nombre:'Cirugía con hospitalización', d:{prestacion:'hosp', cantidad:1, valor:4100000, bonifPct:50}},
 ];
 
 const normalizar = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
@@ -1391,8 +1668,7 @@ function tarjeta(r, mejor, ejGana = []) {
   // Vista resumida: cálculo en una línea y topes en dos; todo lo demás en "Ver detalle".
   const porUnidad = r.cantidad > 1 ? ` por ${t.singular}` : '';
   const formula = `<b>${pctTxt(r.pct)}</b> de ${fmtCLP(r.base)}${porUnidad}` +
-    (r.razonBase ? ` <span class="tag con-tip" tabindex="0">base reducida ⓘ<span class="tip-box" role="tooltip">${r.razonBase}: ${fmtCLP(r.base)} en vez de tus ${fmtCLP(r.copagoUnidad)}.</span></span>` : '') +
-    (r.exentoMinimo ? ` <span class="tag exento con-tip" tabindex="0">sin mínimo Fonasa ⓘ<span class="tip-box" role="tooltip">${r.exentoMinimo} (${fmtCLP(r.base)}).</span></span>` : '');
+    (r.razonBase ? ` <span class="tag con-tip" tabindex="0">base reducida ⓘ<span class="tip-box" role="tooltip">${r.razonBase}. Calcula sobre ${fmtCLP(r.base)}, no sobre tus ${fmtCLP(r.copagoUnidad)}.</span></span>` : '');
   // Topes en el orden en que se aplican: por atención → anual de la atención → total del plan.
   const anual = t.anuales[0];
   const lineaTope = (nombre, valor, extra = '') => `<div class="tope-fila"><span>${nombre}</span><span>${valor}${extra ? `<small>${extra}</small>` : ''}</span></div>`;
@@ -1485,7 +1761,7 @@ function mostrarTab(id) {
     $(`tab-${t}`).setAttribute('aria-selected', String(t === id));
     $(`panel-${t}`).hidden = t !== id;
   }
-  try { localStorage.setItem('ismary-tab', id); } catch (e) {}
+  try { localStorage.setItem('ismary-v2-tab', id); } catch (e) {}
   programarRender();
 }
 document.querySelector('.tabs').addEventListener('click', e => {
@@ -1501,7 +1777,7 @@ document.addEventListener('click', e => {
   const b = e.target.closest('.step');
   if (!b) return;
   const input = $(b.dataset.target);
-  const n = Math.round(num(b.dataset.target)) + Number(b.dataset.delta);
+  const n = Math.round((num(b.dataset.target) + Number(b.dataset.delta)) * 100) / 100;
   input.value = Math.min(Number(input.max), Math.max(Number(input.min), n));
   programarRender();
 });
@@ -1539,11 +1815,30 @@ $('form').addEventListener('input', programarRender);
 $('form').addEventListener('change', programarRender);
 
 pintarOtras();
+pintarMedicamentos();
+for (const id of ['psi', 'nut']) {
+  $(`${id}Periodo`).addEventListener('change', () => {
+    cambiarPeriodoSesiones(id);
+    programarRender();
+  });
+}
+$('agregarMedicamento').addEventListener('click', () => {
+  agregarGastoFarmacia();
+  programarRender();
+});
+document.addEventListener('click', e => {
+  const boton = e.target.closest('[data-quitar-med]');
+  if (!boton) return;
+  quitarGastoFarmacia(boton.dataset.quitarMed);
+  programarRender();
+});
 $('nuevaAtencion').addEventListener('change', e => {
   const k = e.target.value;
   if (!k) return;
   leerOtras();
-  OTRAS.push({id:`o${siguienteOtra++}`, k, n:1, precio:40000, copago:40000});
+  const esRemedio = k.startsWith('med_');
+  OTRAS.push({id:`o${siguienteOtra++}`, k, n:esRemedio ? 12 : 1,
+    precio:esRemedio ? 25000 : 40000, bonifPct:esRemedio || k === 'nutricionista' ? 0 : 50, ordenMedica:true});
   pintarOtras();
   programarRender();
 });
@@ -1557,14 +1852,24 @@ document.addEventListener('click', e => {
 });
 
 leerUF();
-for (const [k, uf] of Object.entries(PRIMA_UF)) $(`prima_${k}`).value = Math.round(uf * VALOR_UF);
+actualizarPrimasBice();
+for (const key of Object.keys(PRIMA_UF_POR_CARGAS)) {
+  $(`prima_${key}`).addEventListener('input', e => { e.target.dataset.cotizacion = 'manual'; });
+  $(`prima_${key}`).addEventListener('change', e => { e.target.dataset.cotizacion = 'manual'; });
+}
+$('restaurarPrimasBice').addEventListener('click', () => {
+  for (const key of Object.keys(PRIMA_UF_POR_CARGAS)) delete $(`prima_${key}`).dataset.cotizacion;
+  leerUF();
+  actualizarPrimasBice();
+  programarRender();
+});
 $('plan').addEventListener('input', programarRender);
 $('plan').addEventListener('change', programarRender);
 
 cargarEjemplo(EJEMPLOS[0].d);
 // La pestaña inicial puede venir en la dirección (#una, #anio…) o de la última visita.
 let tabInicial = location.hash.slice(1);
-try { tabInicial = tabInicial || localStorage.getItem('ismary-tab'); } catch (e) {}
+try { tabInicial = tabInicial || localStorage.getItem('ismary-v2-tab'); } catch (e) {}
 mostrarTab(tabInicial && $(`tab-${tabInicial}`) ? tabInicial : 'analisis');
 </script>
 </body>
